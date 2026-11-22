@@ -20,13 +20,16 @@ that reported it.
 
 ## How it works
 
-- Python 3, **standard library only** (`os`, `struct`, `zlib`), no network
-  access at runtime.
-- The page is rendered into an in-memory framebuffer: a hand-drawn 5×7
-  bitmap font (upper and lower case, digits, punctuation) provides the
-  typography, with styled runs (headline / detail / source tag) wrapped by
-  a small layout engine that assigns sections to the shorter of two
-  columns and never overflows the page.
+- Python 3, **standard library only** (`itertools`, `os`, `struct`,
+  `zlib`), no network access at runtime.
+- The page is rendered into an in-memory framebuffer: a hand-drawn
+  proportional bitmap font on a 13-row grid (capitals 10 rows tall,
+  upper and lower case, digits, punctuation) provides the typography.
+  Within each section the stories flow as continuous briefs — bold
+  headline, detail, source tag, separated by a small red square — and a
+  layout engine measures every wrapped line and assigns sections to
+  three columns by an exact search that minimises the tallest column,
+  so the page is balanced and nothing is ever clipped or dropped.
 - The PNG is encoded directly (IHDR/IDAT/IEND with `zlib`) from pure
   integer arithmetic, so the output is fully deterministic.
 

@@ -156,7 +156,7 @@ _FOLD = {
 
 
 def clean(text):
-    """Fold any character the font lacks onto one it has."""
+    """Fold any character the font lacks onto one it has, else '?'."""
     out = []
     for ch in text:
         if ch in FONT or ch == SEP:

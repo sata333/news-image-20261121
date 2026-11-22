@@ -29,7 +29,7 @@ that reported it.
   headline, detail, source tag, separated by a small red square — and a
   layout engine measures every wrapped line and assigns sections to
   three columns by an exact search that minimises the tallest column,
-  so the page is balanced and nothing is ever clipped or dropped.
+  so the columns come out balanced and no story is ever clipped or dropped.
 - The PNG is encoded directly (IHDR/IDAT/IEND with `zlib`) from pure
   integer arithmetic, so the output is fully deterministic.
 
@@ -112,7 +112,7 @@ announced (Reuters) · 07:06 Mocha port attack reported (Outlook India) ·
 Two consecutive runs into different output directories produce
 byte-identical files:
 
-- `entry.png`: **62,973 bytes** (limit 1 MiB), **1024×1024** px
+- `entry.png`: **72,550 bytes** (limit 1 MiB), **1024×1024** px
 - SHA-256: `8a9b56f95947cba9c9fd91c698d21cda55426d6bafc9f73c90d348f2333715a0`
   (identical for both runs)
 
